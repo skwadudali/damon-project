@@ -1,0 +1,338 @@
+body {
+  overflow-x: hidden;
+  background:linear-gradient(0deg, rgba(111, 0, 255, 0.3), rgba(3, 20, 76, 0.3)), url(media/basketball-dimmed.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+
+
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.score-board-wrapper {
+  display: block;
+}
+
+#scores {
+  width: 550px;
+  margin-left: 40px;
+}
+
+.sb-1-1 {
+  display: inline-block;
+  font-size: 50px;
+  font-weight: bold;
+  margin-left: 1px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: rgb(68, 68, 68);
+  border-radius: 10px;
+}
+
+.sb-1-2 {
+  display: inline-block;
+  font-size: 100px;
+  font-weight: bold;
+  margin-left: 1px;
+  width: 189.5px;
+  background-color: rgb(68, 68, 68);
+  margin-top: -7px;
+  text-align: center;
+  font-family: josefin sans;
+}
+
+#win-text {
+  color: rgb(108, 194, 244);
+}
+
+#loss-num {
+  width: 214px;
+}
+
+#wrapper.toggled {
+  padding-left: 250px;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 0;
+  height: 100%;
+  margin-top: -30px;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #242424;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: 500px;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -250px;
+}
+
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+  position: fixed;
+  top: 0px;
+  width: 250px;
+  margin-top: 90px;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  margin-top: 20px;
+  margin-left: -5px;
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+  text-indent: 50px;
+  line-height: 40px;
+  color: #ffffff;
+  border: 1px solid rgb(178, 179, 255);
+  border-width: 2px;
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav>.sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+.sidebar-nav>.sidebar-brand a {
+  color: #281d1d;
+}
+
+.sidebar-nav>.sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+@media(min-width:768px) {
+  #wrapper {
+    padding-left: 0;
+  }
+
+  #wrapper.toggled {
+    padding-left: 250px;
+  }
+
+  #sidebar-wrapper {
+    width: 0;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    width: 270px;
+  }
+
+  #page-content-wrapper {
+    padding: 20px;
+    position: relative;
+  }
+
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
+}
+
+.Highscoreplayer {
+  margin-top: 80px;
+}
+
+.content-table {
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 500px;
+  min-height: 300px;
+  font-family: arial;
+  font-size: 20px;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+}
+
+
+.content-table thead tr {
+  background-color: rgb(50, 61, 97);
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 5px solid rgb(72, 72, 72);
+}
+
+
+.record {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 25px;
+}
+
+.dropbtn {
+  background-color: #1f3458;
+  color: white;
+  padding: 8px 15px 8px 15px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #000000;
+}
+
+.container {
+  border: 2px solid white;
+  height: 550px;
+  width: 400 px;
+  color: white;
+  padding-left: 50px;
+  margin-right: 50px;
+}
+
+.container1 {
+
+  height: 550px;
+  width: 200 px;
+  color: white;
+  padding-left: 50px;
+  margin-left: 150px;
+}
+
+.nav-item a {
+  background-color: rgb(11, 12, 12);
+  margin-top: 5px;
+  color: white;
+  text-indent: 45px;
+  border: 2px solid black;
+}
+
+.nav-item a:hover {
+  background: white;
+  color: black;
+}
+
+th,
+tr,
+td {
+  text-align: center;
+}
+
+.table4 {
+  color: black;
+  border: 2px double rgb(233, 227, 227);
+  font-size: 20px;
+  justify-content: center;
+}
+
+.mtt1 {
+  color: white;
+  font-size: 28px;
+  text-align: center;
+}
+
+.mtt-2 {
+  border: 1px solid black;
+  text-align: center;
+  padding-bottom: 3px;
+  margin-top: 7px;
+}
+
+.n1 {
+  color: white;
+  text-align: center;
+  font-size: 19px;
+}
+#table1{
+  color:white;
+  border:2px solid white;
+}
+#table1 th{
+  padding:10px;
+}
+
+
+
